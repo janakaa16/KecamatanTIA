@@ -7,5 +7,5 @@ scikit-image
 scikit-learn==1.2.1
 scikit-learn-intelex
 scipy==1.10.0
-seaborn 
+seaborn @ file:///C:/b/abs_68ltdkoyoo/croot/seaborn_1673479199997/work
 streamlit==1.24.0
