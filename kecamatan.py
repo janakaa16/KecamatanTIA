@@ -42,9 +42,43 @@ selected_region = st.selectbox("Choose a region", df["Provinsi"].unique())
 selected_rows2 = df[df["Provinsi"] == selected_region]
 
 plt.figure(figsize=(20, 10))
-ax = sns.countplot(data=selected_rows2, x=' kecamatan', order=selected_rows2[' kecamatan'].value_counts().head(10).index)
+ax = sns.countplot(data=selected_rows2, x='Kota', order=selected_rows2['Kota'].value_counts().head(10).index)
 plt.xticks(rotation=20, size=20)
-plt.title(f"Count Plot for Kecamatan in {selected_region}")
+plt.title(f"Count Plot for Kota in {selected_region}")
+plt.tight_layout()
+
+# Annotate the bars with count values
+for p in ax.patches:
+    ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height()),
+                ha='center', va='center', fontsize=12, color='gray', xytext=(0, 5),
+                textcoords='offset points')
+
+st.pyplot()
+
+# New Jabodetabek vs Luar
+selected_loc = st.selectbox("Choose a location", df["Lokasi"].unique())
+
+# Display data based on selected city
+selected_rows3 = df[df["Lokasi"] == selected_loc]
+
+plt.figure(figsize=(20, 10))
+ax = sns.countplot(data=selected_rows3, x='Kota', order=selected_rows3['Kota'].value_counts().head(10).index)
+plt.xticks(rotation=20, size=20)
+plt.title(f"Count Plot for Kota in {selected_loc}")
+plt.tight_layout()
+
+# Annotate the bars with count values
+for p in ax.patches:
+    ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height()),
+                ha='center', va='center', fontsize=12, color='gray', xytext=(0, 5),
+                textcoords='offset points')
+
+st.pyplot()
+
+plt.figure(figsize=(20, 10))
+ax = sns.countplot(data=selected_rows3, x=' kecamatan', order=selected_rows3[' kecamatan'].value_counts().head(10).index)
+plt.xticks(rotation=20, size=20)
+plt.title(f"Count Plot for kecamatan in {selected_loc}")
 plt.tight_layout()
 
 # Annotate the bars with count values
