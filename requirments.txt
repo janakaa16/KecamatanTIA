@@ -4,5 +4,4 @@ numpy
 pandas 
 plotly 
 streamlit==1.24.0
-seaborn==0.11.2
-
+seaborn==0.12.2
