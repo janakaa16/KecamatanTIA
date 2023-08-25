@@ -1,0 +1,8 @@
+matplotlib 
+matplotlib-inline
+numpy
+pandas 
+plotly 
+seaborn 
+streamlit==1.24.0
+
