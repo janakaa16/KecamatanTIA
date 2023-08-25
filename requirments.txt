@@ -3,5 +3,9 @@ matplotlib-inline
 numpy
 pandas 
 plotly 
+scikit-image 
+scikit-learn==1.2.1
+scikit-learn-intelex
+scipy==1.10.0
+seaborn 
 streamlit==1.24.0
-seaborn==0.12.2
