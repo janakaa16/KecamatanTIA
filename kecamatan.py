@@ -27,7 +27,8 @@ city_options = ['All'] + list(df["Kota"].unique())
 selected_city = st.selectbox("Choose a city", city_options)
 
 # Dropdown for Region selection
-selected_region = st.selectbox("Choose a region", df2["Provinsi"].unique())
+region_options = ['All'] + list(df2["Provinsi"].unique())
+selected_region = st.selectbox("Choose a region", region_options)
 
 # Filter data based on selections
 if selected_city == 'All':
@@ -35,7 +36,10 @@ if selected_city == 'All':
 else:
     selected_rows_city = df[df["Kota"] == selected_city]
 
-selected_rows_region = df2[df2["Provinsi"] == selected_region]
+if selected_region == 'All':
+    selected_rows_region = df2  # Show all rows
+else:
+    selected_rows_region = df2[df2["Provinsi"] == selected_region]
 
 # Function to create and display count plot
 def display_count_plot(data, x_column, title):
